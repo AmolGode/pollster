@@ -1,0 +1,14 @@
+{% include 'base.html' %}
+
+{% block content %}
+<h1 class="text-center mb-3">Poll Questions</h1>
+{% for que in question_list%}
+<div class="card mb-3">
+    <div class="card-body">
+        <p class="lead">{{que.question_text}}</p>
+        <a href="/polls/detail/{{que.id}}" class="btn-primary btn">Vote Now</a>
+        <a href="/polls/result/{{que.id}}" class="btn btn-secondary">Result</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

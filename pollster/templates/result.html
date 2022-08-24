@@ -1,0 +1,14 @@
+{% include 'base.html' %}
+
+{% block content %}
+<h1 class="text-center mb-3">{{question.question_text}}</h1>
+<ul>
+    {% for choice in question.choice_set.all %}
+    <li class="list-group-item" style="width: 40%; margin-left: 30%;"> {{choice.choice_text}} {{choice.vote}}
+        <span class="badge badge-success float-right">{{choice.votes}}</span>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="/polls/homepage" class="btn btn-secondary">Home Page</a>
+{% endblock %}
